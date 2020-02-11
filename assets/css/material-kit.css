@@ -11179,7 +11179,7 @@ label {
 
 .title {
   margin-top: 30px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   min-height: 32px;
 }
 
@@ -14800,7 +14800,7 @@ h2.title {
 .description,
 .card-description,
 .footer-big p {
-  color: #999;
+  /* color: #999; */
 }
 
 .text-warning {
