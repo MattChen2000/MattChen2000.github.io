@@ -3299,7 +3299,7 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #9c27b0;
+  color: #3C4858;
   background-color: transparent;
 }
 
@@ -13998,7 +13998,6 @@ textarea {
   color: inherit;
   padding: 0.9375rem;
   font-weight: 400;
-  font-size: 12px;
   text-transform: uppercase;
   border-radius: 3px;
   line-height: 20px;
