@@ -983,6 +983,11 @@ pre code {
   overflow-y: scroll;
 }
 
+.projectItem {
+  text-align: left;
+  line-height: 1rem;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -18063,3 +18068,8 @@ footer .pull-center {
 }
 
 /*# sourceMappingURL=kit-free.css.map */
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
