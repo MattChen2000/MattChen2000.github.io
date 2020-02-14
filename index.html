@@ -38,10 +38,7 @@
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#profile">
-          <i class="material-icons">account_circle</i>
-          About Me 
-        </a>
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="navbar-toggler-icon"></span>
@@ -51,6 +48,11 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" data-original-title="About Me">
+              <i class="material-icons">account_circle</i>About Me 
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#projects" data-original-title="My Projects">
               <i class="material-icons">favorite</i> Projects
@@ -116,6 +118,11 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="#devstack" role="tab" data-toggle="tab">
+                    <i class="material-icons">reorder</i> Dev Stack
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="#education" role="tab" data-toggle="tab">
                     <i class="material-icons">school</i> Education
                   </a>
@@ -146,28 +153,182 @@
             </div>
           </div>
           <div class="tab-pane text-center gallery" id="experience">
-            <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="./assets/img/examples/olu-eletu.jpg" class="rounded">
-                <img src="./assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-                <img src="./assets/img/examples/cynthia-del-rio.jpg" class="rounded">
-              </div>
-              <div class="col-md-3 mr-auto">
-                <img src="./assets/img/examples/mariya-georgieva.jpg" class="rounded">
-                <img src="./assets/img/examples/clem-onojegaw.jpg" class="rounded">
+            <div class="row" style="justify-content: center;">
+              <div class="card" style="width: 80%;">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Stoooges Education</h4>
+                    <h5 class="category">Software Engineer Intern, Full-Stack Development</h5>
+                    <p>Hangzhou, China, 06/2019 - 08/2019</p>
+                </div>
+                <div class="card-body">
+                      <ul style="text-align: left;">
+                        <li>
+                          <p>Scripted a python web-scraping project that kept the database of TOEFL test questions up to date</p>
+                        </li>
+                        <li>
+                          <p>Built a Node.js web json API that feeds 10k+ test questions to users by categories</p>
+                        </li>
+                        <li>
+                          <p>Redesigned the project Express MVC (model-view-controller) pattern by enabling server-side caching</p>
+                        </li>
+                        <li>
+                          <p>Improved the service response time from 531ms to 47ms (95th percentile)</p>
+                        </li>
+                      </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane text-center gallery" id="education">
+          <div class="tab-pane text-center gallery" id="devstack">
             <div class="row">
-              <div class="col-md-3 ml-auto">
-                <img src="./assets/img/examples/mariya-georgieva.jpg" class="rounded">
-                <img src="./assets/img/examples/studio-3.jpg" class="rounded">
+              <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 20rem; min-height: 76%;">
+                  <div class="card-body">
+                    <h4 class="card-title">Java</h4>
+                      <ul style="text-align: left;">
+                        <li>
+                          <p class="card-text">Data Structures and Algorithms</p>
+                        </li>
+                        <li>
+                          <p class="card-text">SOLID Object-Oriented Design</p>
+                        </li>
+                        <li>
+                          <p class="card-text">Spring Framework 4</p>
+                        </li>
+                        <li>
+                          <p class="card-text">JUnit Testing</p>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-3 mr-auto">
-                <img src="./assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-                <img src="./assets/img/examples/olu-eletu.jpg" class="rounded">
-                <img src="./assets/img/examples/studio-1.jpg" class="rounded">
+              <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 20rem; min-height: 76%;">
+                  <div class="card-body">
+                    <h4 class="card-title">JavaScript</h4>
+                      <ul style="text-align: left;">
+                        <li>
+                          <p class="card-text">ES2015, 2016</p>
+                        </li>
+                        <li>
+                          <p class="card-text">Frontend: React w/ Redux, Angular</p>
+                        </li>
+                        <li>
+                          <p class="card-text">Backend: Node.js</p>
+                        </li>
+                        <li>
+                          <p class="card-text">AJAX, Axios, jQuery</p>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 20rem; min-height: 76%;">
+                  <div class="card-body">
+                    <h4 class="card-title">Python</h4>
+                      <ul style="text-align: left;">
+                        <li>
+                          <p class="card-text">NumPy, Pandas, and Scipy</p>
+                        </li>
+                        <li>
+                          <p class="card-text">Web data scraping</p>
+                        </li>
+                        <li>
+                          <p class="card-text">doctest</p>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6">
+                  <div class="card" style="width: 20rem; min-height: 76%;">
+                    <div class="card-body">
+                      <h4 class="card-title">Databases</h4>
+                        <ul style="text-align: left;">
+                          <li>
+                            <p class="card-text">MongoDB</p>
+                          </li>
+                          <li>
+                            <p class="card-text">MySQL</p>
+                          </li>
+                          <li>
+                            <p class="card-text">Firebase</p>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="card" style="width: 20rem; min-height: 76%;">
+                    <div class="card-body">
+                      <h4 class="card-title">C/C++</h4>
+                        <ul style="text-align: left;">
+                          <li>
+                            <p class="card-text">Std Library</p>
+                          </li>
+                          <li>
+                            <p class="card-text">Data Structures and Algorithms</p>
+                          </li>
+                          <li>
+                            <p class="card-text">Memory Allocation</p>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="card" style="width: 20rem; min-height: 76%;">
+                    <div class="card-body">
+                      <h4 class="card-title">Tools and Technologies</h4>
+                        <ul style="text-align: left;">
+                          <li>
+                            <p class="card-text">HTML, CSS, Bootstrap</p>
+                          </li>
+                          <li>
+                            <p class="card-text">NPM, Webpack, Yarn, Git</p>
+                          </li>
+                          <li>
+                            <p class="card-text">Linux Shell Scripting</p>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 20rem; min-height: 76%;">
+                  <div class="card-body">
+                    <h4 class="card-title">Matlab/Octave</h4>
+                      <ul style="text-align: left;">
+                        <li>
+                          <p class="card-text">Floating point number mechanism</p>
+                        </li>
+                        <li>
+                          <p class="card-text">Scientific Computing</p>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane text-center gallery" id="education"">
+            <div class="row" style="justify-content: center;">
+              <div class="card" style="width: 80%;">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Haverford College, PA</h4>
+                    <h5 class="category">B.S. Candidate in Computer Science</h5>
+                    <p>Expected in 05/2022</p>
+                </div>
+                <div class="card-body" style="text-align: left;">
+                  <h5>Related Coursework:</h5>
+                  <p>Data Structures and Algorithms, Scientific Computing, System Programming, Intro to Biometrics, Linear Algebra</p>
+                </div>
               </div>
             </div>
           </div>
