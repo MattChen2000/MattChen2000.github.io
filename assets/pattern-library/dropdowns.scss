@@ -1,0 +1,57 @@
+@import "colors";
+
+.cf-dropdown {
+    display: inline-block;
+    position: relative;
+    &__menu {
+        border: 1px solid cf-color($gray, 55);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: -0.625rem;
+        z-index: 10;
+        &--right {
+            right: -0.625rem;
+            left: auto;
+        }
+    }
+    &__item {
+        background-color: cf-color($white, 100);
+        border: 0;
+        border-bottom: 1px solid cf-color($gray, 20);
+        color: cf-color($black, 100);
+        cursor: pointer;
+        display: block;
+        font-size: 0.813rem;
+        line-height: 1.846em;
+        margin: 0;
+        padding: 0.231em 0.923em 0.154em;
+        text-align: left;
+        text-decoration: none;
+        text-transform: none;
+        white-space: nowrap;
+        width: 100%;
+        .cf-icon {
+            float: none;
+            margin: -0.0625rem 0.313rem 0;
+            padding: 0;
+        }
+        &:hover {
+            background-color: cf-color($gray, 20);
+        }
+        &:last-child {
+            border: 0;
+        }
+    }
+    &__toggle {
+        > .cf-button {
+            position: relative;
+            right: 0.125rem;
+            > .cf-icon {
+                position: relative;
+                bottom: 0.125rem;
+            }
+        }
+    }
+}

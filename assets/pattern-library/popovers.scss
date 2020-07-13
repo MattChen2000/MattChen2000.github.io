@@ -1,0 +1,234 @@
+@import "colors";
+
+.cf-popover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+    border: 1px solid cf-color($gray, 55);
+    background-color: $white;
+    z-index: 10000;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    &__header {
+        color: $gray;
+        font-weight: 400;
+        font-size: 0.750rem; 
+        line-height: 1.667em;
+        margin: 0 0.833em;
+        padding-top: 1.250rem;
+        border-bottom: 1px solid cf-color($gray, 20);
+    }
+    &__body {
+        min-height: 2.500rem;
+        padding: 1.000rem 0.625rem;
+        min-width: 7.500rem;
+    }
+    &__footer {
+        height: 3.125rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 0.625rem;
+        border-top: 1px solid cf-color($gray, 20);
+        > button:last-child {
+            margin-left: 0.625rem;
+        }
+    }
+    &--small {
+        width: 15rem;
+    }
+    &--medium {
+        width: 20rem;
+    }
+    &--large {
+        width: 25rem;
+    }
+    &--left::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: 50%;
+        left: -0.5rem;
+        margin-top: -0.5rem;
+        -webkit-box-shadow: -1px 1px 0 0 cf-color($gray, 55);
+        box-shadow: -1px 1px 0 0 cf-color($gray, 55);
+    }
+    &--left-top::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: 1.5rem;
+        left: -0.5rem;
+        margin-top: -0.5rem;
+        -webkit-box-shadow: -1px 1px 0 0 cf-color($gray, 55);
+        box-shadow: -1px 1px 0 0 cf-color($gray, 55);
+    }
+    &--left-bottom::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: auto;
+        bottom: 1rem;
+        left: -0.5rem;
+        margin-top: -0.5rem;
+        -webkit-box-shadow: -1px 1px 0 0 cf-color($gray, 55);
+        box-shadow: -1px 1px 0 0 cf-color($gray, 55);
+    }
+    &--right::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: 50%;
+        right: -0.5rem;
+        margin-top: -0.5rem;
+        -webkit-box-shadow: 1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: 1px -1px 0 0 cf-color($gray, 55);
+    }
+    &--right-top::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: 1.5rem;
+        right: -0.5rem;
+        margin-top: -0.5rem;
+        -webkit-box-shadow: 1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: 1px -1px 0 0 cf-color($gray, 55);
+    }
+    &--right-bottom::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: auto;
+        bottom: 1rem;
+        right: -0.5rem;
+        margin-top: -0.5rem;
+        -webkit-box-shadow: 1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: 1px -1px 0 0 cf-color($gray, 55);
+    }
+    &--top::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: -0.5rem;
+        left: 50%;
+        margin-left: -0.5rem;
+        -webkit-box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+    }
+    &--top-left::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        top: -0.5rem;
+        left: 1.5rem;
+        margin-left: -0.5rem;
+        -webkit-box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+    }
+    &--top-right::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        left: auto;
+        right: 1.5rem;
+        top: -0.5rem;
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+        -webkit-box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+    }
+    &--bottom::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        bottom: -0.5rem;
+        left: 50%;
+        margin-left: -0.5rem;
+        -webkit-box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: 1px 1px 1px 0 cf-color($gray, 55);
+    }
+    &--bottom-left::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        bottom: -0.5rem;
+        left: 1.5rem;
+        top: 100%;
+        margin-top: -0.5rem;
+        margin-left: -0.5rem;
+        -webkit-box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: 1px 1px 1px 0 cf-color($gray, 55);
+    }
+    &--bottom-right::after {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: '';
+        background-color: $white;
+        z-index: -1;
+        left: auto;
+        right: 1.5rem;
+        top: 100%;
+        margin-top: -0.5rem;
+        margin-right: -0.5rem;
+        -webkit-box-shadow: -1px -1px 0 0 cf-color($gray, 55);
+        box-shadow: 1px 1px 1px 0 cf-color($gray, 55);
+    }
+}

@@ -1,0 +1,741 @@
+@import "colors";
+@import "mixins";
+
+.cf-tooltip {
+    position: relative;
+
+    &::after {
+        opacity: 0;
+        display: none;
+        position: absolute;
+        content: attr(data-tooltip);
+        font-size: 0.688rem;
+        padding: 0.182em 0.727em;
+        bottom: 1.5rem;
+        left: 50%;
+        background: cf-color($white, 100);
+        color: $black;
+        white-space: nowrap;
+        z-index: 2;
+        border: 1px solid $black;
+        border-radius: 2px;
+        line-height: 2rem;
+    }
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: solid 8px transparent;
+        border-right: solid 8px transparent;
+        border-top: solid 8px $black;
+        opacity: 0;
+        display: none;
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        z-index: 3;
+    }
+
+    &:hover {
+        &::after {
+            display: block;
+            opacity: 1;
+
+            @include transform(translate(-50%, 0));
+        }
+
+        &::before {
+            display: block;
+            opacity: 1;
+
+            @include transform(translate(-50%, 0));
+        }
+    }
+
+    &.cf-tooltip--input, &.cf-tooltip--select {
+        line-height: normal;
+
+        &::after {
+            line-height: 2rem;
+        }
+
+        &:hover {
+            &::after {
+                bottom: 2.375rem;
+            }
+
+            &::before {
+                bottom: auto;
+                top: -0.5rem;
+            }
+        }
+    }
+
+    &.cf-tooltip--input:hover {
+        &::after {
+            bottom: 1.875rem;
+        }
+
+        &::before {
+            top: -0.750rem;
+        }
+        &.cf-input-with-icon {
+            &::after {
+                bottom: 2.125rem;
+            }
+    
+            &::before {
+                top: -0.500rem;
+            }
+        }
+    }
+
+    &.cf-tooltip--textarea {
+        display: inline-block;
+        &:hover {
+            &::after {
+                bottom: calc(100% + 0.500rem);
+                line-height: 0.938rem;
+                padding: 0.500rem;
+                white-space: normal;
+            }
+            &::before {
+                top: -0.500rem;
+            }
+        }
+    }
+
+    &.cf-checkbox {
+        &::after {
+            line-height: 2rem;
+        }
+
+        &:hover {
+            &::after {
+                bottom: 2.125rem;
+            }
+
+            &::before {
+                bottom: auto;
+                top: -0.5rem;
+            }
+        }
+    }
+
+    &.cf-tooltip--invalid {
+        &::after {
+            background: cf-color($red, 100);
+            color: cf-color($white, 100);
+            border: 1px solid cf-color($red, 100);
+        }
+        &::before {
+            border-top: solid 8px cf-color($red, 100);
+        }
+    }
+
+    &.cf-tooltip--select {
+        &:hover {
+            &::after {
+                bottom: 2.375rem;
+            }
+        }
+    }
+
+    &.cf-tooltip--down {
+        &:hover {
+            &::after {
+                top: 100%;
+                bottom: auto;
+                @include transform(translate(-50%, 21%));
+            }
+
+            &::before {
+                bottom: auto;
+                top: 1.125rem;
+                @include transform(translate(-50%, 0%));
+                border-top: 0;
+                border-bottom: solid 8px $black;
+            }
+        }
+    }
+
+    &.cf-tooltip--down-left-offset {
+        &:hover {
+            &::after {
+                top: 100%;
+                bottom: auto;
+                @include transform(translate(-20%, 21%));
+            }
+
+            &::before {
+                bottom: auto;
+                top: 1.125rem;
+                @include transform(translate(-50%, 0%));
+                border-top: 0;
+                border-bottom: solid 8px $black;
+            }
+        }
+    }
+
+    &.cf-tooltip--down-right-offset {
+        &:hover {
+            &::after {
+                top: 100%;
+                bottom: auto;
+                @include transform(translate(-80%, 21%));
+            }
+
+            &::before {
+                bottom: auto;
+                top: 1.125rem;
+                @include transform(translate(-50%, 0%));
+                border-top: 0;
+                border-bottom: solid 8px $black;
+            }
+        }
+    }
+
+    &.cf-tooltip--left {
+        &:hover {
+            &::after {
+                left: auto;
+                margin-right: 0.688rem;
+                right: 100%;
+
+                @include transform(translate(0, 90%));
+            }
+
+            &::before {
+                left: auto;
+                right: 100%;
+
+                @include transform(rotate(-90deg) translate(-70%, 0%));
+            }
+        }
+    }
+
+    &.cf-tooltip--right {
+        &:hover {
+            &::after {
+                left: 100%;
+                margin-left: 0.688rem;
+
+                @include transform(translate(0, 90%));
+            }
+
+            &::before {
+                left: 100%;
+
+                @include transform(rotate(90deg) translate(70%, 0));
+            }
+        }
+    }
+
+    &.cf-tooltip--textwrap {
+        &:hover {
+            &::after {
+                line-height: 0.938rem;
+                padding: 0.5rem;
+                white-space: normal;
+                width: 12.5rem;
+            }
+        }
+    }
+
+    &.cf-tooltip--left-offset {
+        &:hover {
+            &::after {
+                @include transform(translate(-20%, 0));
+            }
+        }
+    }
+
+    &.cf-tooltip--right-offset {
+        &:hover {
+            &::after {
+                @include transform(translate(-80%, 0));
+            }
+        }
+    }
+
+    &.cf-tooltip--icon-group.cf-button {
+        &:hover {
+            &::after {
+                @include transform(translate(-50%, -34%));
+            }
+
+            &::before {
+                @include transform(translate(-50%, -165%));
+            }
+        }
+        &.cf-tooltip--down {
+            &:hover {
+                &::after {
+                    @include transform(translate(-50%, 21%));
+                }
+    
+                &::before {
+                    @include transform(translate(-50%, 135%));
+                }
+            }
+        }
+        &.cf-tooltip--left-offset {
+            &:hover {
+                &::after {
+                    @include transform(translate(-20%, -35%));
+                }
+            }
+        }
+    
+        &.cf-tooltip--right-offset {
+            &:hover {
+                &::after {
+                    @include transform(translate(-80%, -35%));
+                }
+            }
+        }
+    }
+
+    &.cf-button, &.cf-a-button {
+        &:hover::after {
+            @include transform(translate(-50%, -70%));
+        }
+        &:hover::before {
+            @include transform(translate(-50%, -340%));
+        }
+        &.cf-button--outlined, &.cf-a-button--icon {
+            &:hover::before {
+                @include transform(translate(-50%, -170%));
+            }
+            &:hover::after {
+                @include transform(translate(-50%, -35%));
+            }
+            &.cf-tooltip--left:hover {
+                &::after {
+                    @include transform(translate(0, 75%));
+                }
+                &::before {
+                    @include transform(rotate(-90deg) translate(-30%, 0%));
+                }
+            }
+            &.cf-tooltip--right:hover {
+                &::after {
+                    @include transform(translate(0, 75%));
+                }
+                &::before {
+                    @include transform(rotate(90deg) translate(30%, 0%));
+                }
+            }
+            &.cf-tooltip--textwrap:hover::after {
+                @include transform(translate(-50%, -0.813rem));
+            }
+            &.cf-tooltip--left-offset:hover::after {
+                @include transform(translate(-20%, -35%));
+            }
+            &.cf-tooltip--right-offset:hover::after {
+                @include transform(translate(-80%, -35%));
+            }
+        }
+        &.cf-button--transparent.cf-button--icon {
+            &:hover {
+                &::before {
+                    @include transform(translate(-50%, -100%));
+                }
+                &::after {
+                    @include transform(translate(-50%, -20%));
+                }
+                &.cf-tooltip--left {
+                    &::after {
+                        @include transform(translate(2%, 85%));
+                    }
+                    &::before {
+                        @include transform(rotate(-90deg) translate(-50%, 35%));
+                    }
+                }
+                &.cf-tooltip--right {
+                    &::after {
+                        @include transform(translate(-2%, 85%));
+                    }
+                    &::before {
+                        @include transform(rotate(90deg) translate(50%, 35%));
+                    }
+                }
+                &.cf-tooltip--textwrap::after {
+                    @include transform(translate(-50%, -0.500rem));
+                }
+                &.cf-tooltip--left-offset::after {
+                    @include transform(translate(-20%, -20%));
+                }
+                &.cf-tooltip--right-offset::after {
+                    @include transform(translate(-80%, -20%));
+                }
+            }
+        }
+        &.cf-tooltip--left:hover {
+            &::after {
+                @include transform(translate(0, 63%));
+            }
+            &::before {
+                @include transform(rotate(-90deg) translate(0%, 0%));
+            }
+        }
+        &.cf-tooltip--right:hover {
+            &::after {
+                @include transform(translate(0, 63%));
+            }
+            &::before {
+                @include transform(rotate(90deg) translate(0%, 0%));
+            }
+        }
+        &.cf-tooltip--left-offset:hover::after {
+            @include transform(translate(-20%, -70%));
+        }
+        &.cf-tooltip--right-offset:hover::after {
+            @include transform(translate(-80%, -70%));
+        }
+        &.cf-tooltip--down {
+            &:hover::after {
+                @include transform(translate(-50%, 30%));
+            }
+            &:hover::before {
+                @include transform(translate(-50%, 300%));
+            }
+            &.cf-button--outlined, &.cf-a-button--icon {
+                &:hover::before {
+                    top: 8px;
+                }
+            }
+            &-left-offset:hover {
+                &::after {
+                    @include transform(translate(-20%, 30%));
+                }
+                &::before {
+                    bottom: auto;
+                    top: 1.125rem;
+                    border-top: 0;
+                    border-bottom: solid 8px #242424;
+                    @include transform(translate(-50%, 300%));
+                }
+                &.cf-button--outlined, &.cf-a-button--icon {
+                    &::before {
+                        top: 8px;
+                    }
+                }
+            }
+            &-right-offset:hover {
+                &::after {
+                    @include transform(translate(-80%, 30%));
+                }
+                &::before {
+                    bottom: auto;
+                    top: 1.125rem;
+                    border-top: 0;
+                    border-bottom: solid 8px #242424;
+                    @include transform(translate(-50%, 300%));
+                }
+                &.cf-button--outlined, &.cf-a-button--icon {
+                    &::before {
+                        top: 8px;
+                    }
+                }
+            }
+        }
+        &.cf-button--medium {
+            &:hover::after {
+                @include transform(translate(-50%, -40%));
+            }
+            &:hover::before {
+                @include transform(translate(-50%, -200%));
+            }
+            &.cf-tooltip--left:hover {
+                &::after {
+                    @include transform(translate(0, 76%));
+                }
+                &::before {
+                    @include transform(rotate(-90deg) translate(-30%, 0%));
+                }
+            }
+            &.cf-tooltip--right:hover {
+                &::after {
+                    @include transform(translate(0, 76%));
+                }
+                &::before {
+                    @include transform(rotate(90deg) translate(30%, 0%));
+                }
+            }
+            &.cf-tooltip--left-offset:hover::after {
+                @include transform(translate(-20%, -42%));
+            }
+            &.cf-tooltip--right-offset:hover::after {
+                @include transform(translate(-80%, -42%));
+            }
+            &.cf-tooltip--down {
+                &:hover::after {
+                    @include transform(translate(-50%, 30%));
+                }
+                &:hover::before {
+                    @include transform(translate(-50%, 165%));
+                }
+                &-left-offset:hover {
+                    &::after {
+                        @include transform(translate(-20%, 30%));
+                    }
+                    &::before {
+                        bottom: auto;
+                        top: 1.125rem;
+                        border-top: 0;
+                        border-bottom: solid 8px #242424;
+                        @include transform(translate(-50%, 165%));
+                    }
+                }
+                &-right-offset:hover {
+                    &::after {
+                        @include transform(translate(-80%, 30%));
+                    }
+                    &::before {
+                        bottom: auto;
+                        top: 1.125rem;
+                        border-top: 0;
+                        border-bottom: solid 8px #242424;
+                        @include transform(translate(-50%, 165%));
+                    }
+                }
+            }
+        }
+        &.cf-button--small {
+            &:hover::after {
+                @include transform(translate(-50%, -10%));
+            }
+            &:hover::before {
+                @include transform(translate(-50%, -50%));
+            }
+            &.cf-tooltip--left:hover {
+                &::after {
+                    @include transform(translate(0, 90%));
+                }
+                &::before {
+                    @include transform(rotate(-90deg) translate(-63%, 0%));
+                }
+            }
+            &.cf-tooltip--right:hover {
+                &::after {
+                    @include transform(translate(0, 90%));
+                }
+                &::before {
+                    @include transform(rotate(90deg) translate(70%, 0%));
+                }
+            }
+            &.cf-tooltip--left-offset:hover::after {
+                @include transform(translate(-20%, -10%));
+            }
+            &.cf-tooltip--right-offset:hover::after {
+                @include transform(translate(-80%, -10%));
+            }
+            &.cf-tooltip--down {
+                &:hover::after {
+                    @include transform(translate(-50%, 30%));
+                }
+                &:hover::before {
+                    @include transform(translate(-50%, 25%));
+                }
+                &-left-offset:hover {
+                    &::after {
+                        @include transform(translate(-20%, 30%));
+                    }
+                    &::before {
+                        bottom: auto;
+                        top: 1.125rem;
+                        border-top: 0;
+                        border-bottom: solid 8px #242424;
+                        @include transform(translate(-50%, 25%));
+                    }
+                }
+                &-right-offset:hover {
+                    &::after {
+                        @include transform(translate(-80%, 30%));
+                    }
+                    &::before {
+                        bottom: auto;
+                        top: 1.125rem;
+                        border-top: 0;
+                        border-bottom: solid 8px #242424;
+                        @include transform(translate(-50%, 25%));
+                    }
+                }
+            }
+        }
+    }
+
+    &.cf-tooltip--disabled-button, &.cf-tooltip--tab-error {
+        cursor: not-allowed;
+        &::after {
+            background: cf-color($red, 100);
+            color: cf-color($white, 100);
+            border: 1px solid cf-color($red, 100);
+        }
+        &::before {
+            border-top: solid 8px cf-color($red, 100);
+        }
+        &:hover {
+            &::after {
+                line-height: 0.938rem;
+                padding: 0.5rem;
+                text-align: left;
+                white-space: normal;
+                width: 10rem;
+                transform: translateX(-50%) translateY(0%) translateY(-1.688rem);
+            }
+            &::before {
+                @include transform(translate(-50%, -340%));
+            }
+        }
+        &.cf-tooltip--left-offset:hover::after {
+            @include transform(translate(-80%, -55%));
+        }
+        &.cf-tooltip--right-offset:hover::after {
+            @include transform(translate(-20%, -55%));
+        }
+        &.cf-tooltip--down {
+            &:hover::after {
+                @include transform(translate(-50%, 25%));
+            }
+            &:hover::before {
+                @include transform(translate(-50%, 300%));
+                border-left: solid 8px transparent;
+                border-right: solid 8px transparent;
+                border-bottom: solid 8px $red;
+            }
+            &-left-offset:hover {
+                &::after {
+                    @include transform(translate(-20%, 25%));
+                    top: 100%;
+                    bottom: auto;
+                }
+                &::before {
+                    @include transform(translate(-50%, 300%));
+                    border-left: solid 8px transparent;
+                    border-right: solid 8px transparent;
+                    border-bottom: solid 8px $red;
+                    bottom: auto;
+                    top: 1.125rem;
+                    border-top: 0;
+                }
+            }
+            &-right-offset:hover {
+                &::after {
+                    @include transform(translate(-80%, 25%));
+                    top: 100%;
+                    bottom: auto;
+                }
+                &::before {
+                    @include transform(translate(-50%, 300%));
+                    border-left: solid 8px transparent;
+                    border-right: solid 8px transparent;
+                    border-bottom: solid 8px $red;
+                    bottom: auto;
+                    top: 1.125rem;
+                    border-top: 0;
+                }
+            }
+        }
+        &.cf-button.cf-button--medium {
+            &:hover::after {
+                transform: translateX(-50%) translateY(0%) translateY(-1.000rem);
+            }
+            &.cf-tooltip {
+                &--left:hover::after, &--right:hover::after {
+                    @include transform(translate(0%, 70%));
+                }
+                &--left-offset:hover::after {
+                    @include transform(translate(-20%, -32%));
+                }
+                &--right-offset:hover::after {
+                    @include transform(translate(-80%, -32%));
+                }
+                &--down {
+                    &:hover::after {
+                        @include transform(translate(-50%, 22%));
+                    }
+                    &-left-offset {
+                        &::after {
+                            @include transform(translate(-20%, 22%));
+                        }
+                        &::before {
+                            border-bottom-color: $red;
+                        }
+                    }
+                    &-right-offset {
+                        &::after {
+                            @include transform(translate(-80%, 22%));
+                        }
+                        &::before {
+                            border-bottom-color: $red;
+                        }
+                    }
+                }
+            }
+        }
+        &.cf-button.cf-button--small {
+            &:hover::after {
+                transform: translateX(-50%) translateY(0%) translateY(-0.250rem);
+            }
+            &.cf-tooltip {
+                &--left:hover::after, &--right:hover::after {
+                    @include transform(translate(0%, 82%));
+                }
+                &--left-offset:hover::after {
+                    @include transform(translate(-20%, -7%));
+                }
+                &--right-offset:hover::after {
+                    @include transform(translate(-80%, -7%));
+                }
+                &--down {
+                    &:hover::after {
+                        @include transform(translate(-50%, 22%));
+                    }
+                    &-left-offset {
+                        &::after {
+                            @include transform(translate(-20%, 22%));
+                        }
+                        &::before {
+                            border-bottom-color: $red;
+                        }
+                    }
+                    &-right-offset {
+                        &::after {
+                            @include transform(translate(-80%, 22%));
+                        }
+                        &::before {
+                            border-bottom-color: $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.cf-tooltip--tab-error {
+        cursor: pointer;
+    }
+
+    &--icon {
+        &:hover {
+            &::after {
+                margin-left: 1rem;
+                left: auto;
+            }
+
+            &::before {
+                margin-left: 1rem;
+                left: auto;
+            }
+        }
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .cf-tooltip {
+        overflow: visible;
+    }
+}

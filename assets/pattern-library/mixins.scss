@@ -1,0 +1,125 @@
+@import "colors";
+
+@mixin transition($transitionproperty: all, $duration: 0.2s, $animationtype: linear) {
+  -webkit-transition: $transitionproperty $duration $animationtype;  
+     -moz-transition: $transitionproperty $duration $animationtype;
+      -ms-transition: $transitionproperty $duration $animationtype; 
+       -o-transition: $transitionproperty $duration $animationtype;
+}
+
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	   -moz-transform: $transforms;
+	    -ms-transform: $transforms;
+	     -o-transform: $transforms;
+            transform: $transforms;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+/* - - - ANIMATIONS - - - */
+
+@-webkit-keyframes cf-spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@-webkit-keyframes cf-pulse {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}	
+}
+
+.cf-spin {
+	-webkit-animation: cf-spin 1.75s linear infinite;
+}
+
+.cf-pulse {
+    -webkit-animation: cf-pulse 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+}
+
+@mixin columncount($columncount) {
+	-webkit-column-count: 	$columncount;
+	-moz-column-count: 		$columncount;
+	column-count: 			$columncount;
+}
+
+@mixin flex-container($flex-flow) {
+    display: flex;
+    flex-flow: $flex-flow;
+    -ms-flex-flow: $flex-flow;
+}
+
+@mixin flex-item($flex-rules) {
+    flex: $flex-rules;
+    -ms-flex: $flex-rules;
+}
+
+@mixin flex-align-content($align) {
+    align-content: $align;
+    -ms-align-content: $align;
+}
+
+@mixin animation($animation, $time, $cycle, $delay:0s) {
+    animation: $animation $time $cycle;
+    -webkit-animation: $animation $time $cycle;
+    animation-delay: $delay;
+    -webkit-animation-delay: $delay;
+}
+
+/*====================================================================== styling */
+
+/* this is the white on gray tiled effect we use throughout a lot of Core projects */
+@mixin coretile() {
+	background-color: white;
+	border-left: 1px solid cf-color($gray, 55);
+	border-right: 1px solid cf-color($gray, 55);
+	border-bottom: 2px solid cf-color($gray, 145);
+}
+
+$border: 1px solid cf-color($gray, 100);
+
+
+
+/*====================================================================== structure */
+
+@mixin pagewidth($arg: 100%) {
+	width: $arg;
+	max-width: $arg;
+	margin: 0 auto;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+@mixin pageheight($arg:100%){
+    min-height:$arg;
+    height:$arg;
+    overflow:hidden;
+}
+
+@mixin limitedText($widthtext){
+    display: inline-block;
+    font-size: 0.9375rem;                        
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+    padding-right: 0.467em; 	
+    width: $widthtext;
+}
+
+@mixin whitebutton() {
+        height: 1.875rem;
+        margin: 0.313rem;
+        border: 1px solid $black;
+}

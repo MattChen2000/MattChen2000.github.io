@@ -1,0 +1,152 @@
+//Headings
+@import "colors";
+
+.cf-h1, .cf-h2, .cf-h3, .cf-h4, .cf-h5 {
+    color: $black;
+    font-size: 2.375rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.cf-h2 {
+    font-size: 2rem;
+}
+
+.cf-h3 {
+    font-size: 1.625rem;
+}
+
+.cf-h4 {
+    font-size: 1.25rem;
+}
+
+.cf-h5 {
+    font-size: 1rem;
+}
+
+/* Text-align */
+.cf-text-left {
+    text-align: left !important;
+}
+
+.cf-text-center {
+    text-align: center !important;
+}
+
+.cf-text-right {
+    text-align: right !important;
+}
+
+/* Font-weight */
+.cf-weight-normal {
+    font-weight: 400;
+}
+
+.cf-weight-bold {
+    font-weight: 700;
+}
+
+/* Font-size */
+.cf-11 {
+    font-size: 0.688rem !important;
+}
+
+.cf-12 {
+    font-size: 0.750rem !important;
+}
+
+.cf-13 {
+    font-size: 0.813rem !important;
+}
+
+.cf-14 {
+    font-size: 0.875rem !important;
+}
+
+.cf-16 {
+    font-size: 1.000rem !important;
+}
+
+.cf-18 {
+    font-size: 1.125rem !important;
+}
+
+.cf-20 {
+    font-size: 1.250rem !important;
+}
+
+.cf-24 {
+    font-size: 1.500rem !important;
+}
+
+.cf-26 {
+    font-size: 1.625rem !important;
+}
+
+.cf-30 {
+    font-size: 1.875rem !important;
+}
+
+.cf-32 {
+    font-size: 2.000rem !important;
+}
+
+.cf-40 {
+    font-size: 2.500rem !important;
+}
+
+.cf-pill {
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 0 0.667em;
+    height: 1.667em;
+    line-height: 1.667em;
+    &--small {
+        font-size: 0.625rem;
+        height: 1.700em;
+    }
+    &--outline {
+        background-color: $white;
+        border: 1px solid;
+        line-height: 1.636em;
+        &.cf-pill--small {
+            line-height: 1.400em;
+        }
+    }
+}
+
+.cf-label {
+    color: $gray;
+    display: block;
+    float: left;
+    height: 1.875rem;
+    line-height: 2.5em;
+    font-size: 0.750rem;
+    padding-right: 0.417em;
+    white-space: nowrap;
+
+    &--above {
+        float: none;
+        height: auto;
+        line-height: normal;
+        padding: 0 0 0.313rem;
+    }
+
+    &--gray {
+        color: cf-color($gray, 145);
+    }
+}
+
+.cf-link {
+    color: $blue;
+    font-size: 0.813rem;
+    text-decoration: underline;
+
+    &:hover {
+        color: cf-color($blue, 120);
+        text-decoration: underline;
+    }
+}
