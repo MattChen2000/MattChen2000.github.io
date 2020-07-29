@@ -1,0 +1,98 @@
+@import "colors";
+
+.cf-search {
+    &--active {
+        .cf-icon.cf-icon-search {
+            opacity: 0;
+        }
+        .cf-search__icon { 
+            i.cf-icon.cf-icon-close {
+                opacity: 1;
+            }
+        }
+    }
+    &--icon {
+        display: inline-block;
+        position: relative;
+    }
+    &__input {
+        &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem $focus-input;
+            border-color: $focus-border;
+        }
+        &:hover {
+            border-color: $gray;
+        }
+        &::-ms-clear {
+            display: none;
+        }
+        border: 1px solid cf-color($gray, 55);
+        color: $black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.813rem;
+        height: 1.875rem;
+        margin: 0;
+        padding: 0 1.846em 0 0.462em;
+
+        &--feature {
+            font-size: 1.375rem;
+            height: 3.75rem;
+            text-indent: 0.500em;
+            width: 100%;
+        }
+
+        &::-webkit-input-placeholder {
+            color: cf-color($gray, 55);
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        }
+        &:-moz-placeholder {
+            color: cf-color($gray, 55);
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        }
+        &::-moz-placeholder {
+            color: cf-color($gray, 55);
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        }
+        &:-ms-input-placeholder {
+            color: cf-color($gray, 55);
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        } 
+    }
+    &--feature {
+        width: 100%;
+        button.cf-search__icon  {
+            width: 1.750rem;
+            height: 1.750rem;
+            top: 1.250rem;
+            right: 0.875rem;
+            & > .cf-icon {
+                font-size: 20px;
+            }
+        }
+    }
+    .cf-search__icon { //nesting to give higher specificity over icon base styles
+		float: none;
+		font-size: 0.750rem;
+		position: absolute;
+        margin-right: 0;
+        top: 0.566rem;
+        right: 0.375rem;
+        width: 0.750rem;
+        height: 0.750rem;
+        .cf-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 100ms ease-in-out;
+            padding: 0;
+            &.cf-icon-close {
+                opacity: 0;
+            }
+        }
+    }
+}

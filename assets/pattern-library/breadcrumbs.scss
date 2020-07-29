@@ -1,0 +1,37 @@
+@import "colors";
+
+.cf-breadcrumbs {
+  font-size: 0.8125rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  &__item {
+    display: inline;
+  }
+
+  &__link {
+    color: $black;
+    text-decoration: none;
+    padding: 0.15em 0.23em;
+
+    &:hover {
+      background: cf-color($gray, 55);
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  &__item + &__item:before {
+    background: transparent;
+    color: $gray;
+    content:"/ ";
+    padding: 0;
+  }
+  
+  &__active {
+    background: cf-color($gray, 55);
+    color: $white;
+    padding: 0.15em 0.23em;
+  }
+}

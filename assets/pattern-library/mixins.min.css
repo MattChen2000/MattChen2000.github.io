@@ -1,0 +1,1 @@
+@-webkit-keyframes cf-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@-webkit-keyframes cf-pulse{0%{-webkit-transform:scale(.1,.1);opacity:0}50%{opacity:1}100%{-webkit-transform:scale(1.2,1.2);opacity:0}}.cf-spin{-webkit-animation:cf-spin 1.75s linear infinite}.cf-pulse{-webkit-animation:cf-pulse 1s ease-out;-webkit-animation-iteration-count:infinite;opacity:0}

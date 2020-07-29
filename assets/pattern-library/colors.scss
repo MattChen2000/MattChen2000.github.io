@@ -1,0 +1,48 @@
+// BRAND COLOR PALETTE
+$blue:      rgb(72, 145, 220); // #4891DC
+$darkblue:	rgb(0, 48, 130); // #003082
+$green:			rgb(113, 175, 81); // #71AF51
+$yellow:		rgb(236, 174, 79); // #ECAE4F
+$red:				rgb(157, 33, 64); // #9D2140
+$orange:		rgb(234, 114, 36); // #EA7224
+$purple:    rgb(165, 66, 152); // #A54298
+$gray:			rgb(113, 113, 113); // #717171
+$black:			rgb(36, 36, 36); // #242424
+$white:			rgb(255, 255, 255); // #FFFFFF
+
+// MISC COLOR VARIABLES
+$focus-shadow: rgba(177,177,177, 0.5);
+$focus-alt-shadow: rgba(90, 140, 65, 1);
+$focus-submit-shadow: rgba(58,116,176, 0.5);
+$focus-input: rgba(191,222,255, 0.9);
+$focus-border: rgb(128,189,255);
+$hover-gray: rgb(240, 240, 240);
+$selection-blue: rgb(231,243,255);
+
+// TINT FUNCTION BY MIXING BASE COLOR WITH WHITE
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// SHADE FUNCTION BY MIXING BASE COLOR WITH BLACK
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// CF COLOR FUNCTION
+// CREATES COLOR RANGE FOR EACH BASE COLOR 0-200
+// 0=WHITE
+// 100=BASE COLOR
+// 200=BLACK
+// EXAMPLE: background: cf-color($blue, 120);
+@function cf-color($color, $percentage) {
+  @if $percentage >=0 and $percentage < 100 {
+      @return tint($color, (100 - $percentage));
+    }
+  @else if $percentage > 100 and $percentage <=200 {
+    @return shade($color, ($percentage - 100));
+  }
+  @else {
+    @return $color;
+  }
+}

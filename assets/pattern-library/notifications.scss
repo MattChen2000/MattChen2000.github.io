@@ -1,0 +1,102 @@
+@import "colors";
+
+.cf-notification {
+    &s {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0.750rem;
+    }
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 2.500rem;
+    width: 100%;
+    margin-bottom: 0.625rem;
+    padding-top: 0.750rem;
+    padding-bottom: 0.750rem;
+    background-color: $white;
+    border: 1px solid cf-color($blue, 120);
+    border-left-width: 10px;
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity linear .3s;
+    order: 3;
+
+    &--error {
+        border-color: cf-color($red, 110);
+        order: 1;
+        > i.cf-icon {
+            color: cf-color($red, 110);
+        }
+    }
+
+    &--warning {
+        border-color: cf-color($yellow, 110);
+        order: 2;
+        > i.cf-icon {
+            color: cf-color($yellow, 110);
+        }
+    }
+
+    &--info > i.cf-icon {
+        color: cf-color($blue, 120);
+    }
+
+    &--success {
+        border-color: cf-color($green, 110);
+        order: 4;
+        > i.cf-icon {
+            color: cf-color($green, 110);
+        }
+    }
+
+    .cf-icon:not(.cf-icon-close) {
+        padding: 0;
+        flex-basis: 1.500rem;
+        margin-left: 0.750rem;
+    }
+
+    .cf-button--icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0.125rem;
+        top: 0.125rem;
+        width: 1.000rem;
+        height: 1.000rem;
+
+        i.cf-icon {
+            opacity: 0.5;
+            font-size: 0.625rem;
+            font-weight: 700;
+            transition: opacity linear .3s;
+
+            &:hover {
+                opacity: 1.0;
+            }
+        }
+    }
+
+    &__msg {
+        color: $black;
+        font-size: 0.813rem;
+        margin: 0;
+        line-height: 1.230em;
+        width: calc(100% - 4.000rem);
+
+        > a {
+            color: $blue;
+            font-size: 0.813rem;
+            text-decoration: underline;
+
+            &:hover {
+                color: cf-color($blue, 120);
+                text-decoration: underline;
+            }
+        }
+    }
+}

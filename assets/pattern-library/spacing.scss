@@ -1,0 +1,41 @@
+/*
+
+Creates spacing helpers for MARGIN and PADDING.
+It generates classes such as:
+
+.mr-2 which creates MARGIN to the RIGHT of 2 pixels
+.pt-8 which creates PADDING to the TOP of 8 pixels
+
+*/
+
+$pixelamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20); //pixel amounts to create classes for
+$directions: (top, bottom, left, right);
+
+@each $pixels in $pixelamounts {
+  @each $direction in $directions {
+    .cf-m#{str-slice($direction, 0, 1)}-#{$pixels} {
+      margin-#{$direction}: #{$pixels}px !important;
+    }
+  
+    .cf-p#{str-slice($direction, 0, 1)}-#{$pixels} {
+      padding-#{$direction}: #{$pixels}px !important;
+    }
+  }
+}
+
+.cf-p-0 {
+  padding: 0 !important;
+}
+
+.cf-m-0 {
+  margin: 0 !important;
+}
+
+.cf-ml-auto {
+  margin-left: auto;
+}
+
+.cf-mr-auto {
+  margin-right: auto;
+}
+

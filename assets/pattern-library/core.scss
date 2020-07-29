@@ -1,0 +1,28 @@
+@import 'animations';
+@import 'colors';
+@import 'mixins';
+@import 'normalize';
+@import 'spacing';
+@import 'typography';
+@import 'utility';
+
+* {
+	box-sizing: border-box;
+}
+:root {
+    font-size: 16px;
+}
+html {
+	font: normal 400 1rem/1.5rem 'Helvetica', 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    text-rendering: auto;
+	color: $black;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: Helvetica, Arial, sans-serif;
+}

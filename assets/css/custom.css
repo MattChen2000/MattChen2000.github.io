@@ -1,0 +1,14 @@
+@import '../icons/icons.css';
+
+.custom-icon {
+    display: inline;
+    max-height: 25px;
+    max-width: 25px !important;
+    vertical-align: text-top;
+    align-items: center;
+}
+
+#chatham-text {
+    color: #007CBA;
+    text-decoration: underline;
+}
